@@ -1,0 +1,2 @@
+-- V1: baseline migration — confirms Flyway connectivity and migration pipeline.
+-- Domain tables are added in subsequent versioned migrations.

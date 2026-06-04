@@ -1,0 +1,24 @@
+<div class="page-header">
+  <h1>Dashboard</h1>
+  <p>Your financial overview for June 2026</p>
+</div>
+
+<div class="metrics-row">
+  @for (card of metrics; track card.label) {
+    <div class="metric-card card">
+      <span class="metric-label">{{ card.label }}</span>
+      <span class="metric-value">{{ card.value }}</span>
+      <span class="metric-delta" [class.positive]="card.positive" [class.negative]="!card.positive">
+        {{ card.delta }}
+      </span>
+    </div>
+  }
+</div>
+
+<div class="chart-card card">
+  <div class="chart-card-header">
+    <span class="chart-title">Monthly Spending Trend</span>
+    <span class="chart-subtitle">Jan – Jun 2026</span>
+  </div>
+  <div #spendingChart class="chart-container"></div>
+</div>

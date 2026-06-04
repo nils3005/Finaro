@@ -1,0 +1,15 @@
+spring:
+  datasource:
+    url: ${SPRING_DATASOURCE_URL:jdbc:postgresql://localhost:5432/finaro}
+    username: ${SPRING_DATASOURCE_USERNAME:finaro}
+    password: ${SPRING_DATASOURCE_PASSWORD:finaro}
+    hikari:
+      connection-timeout: 20000
+      maximum-pool-size: 5
+  jpa:
+    show-sql: true
+
+logging:
+  level:
+    de.nils.finaro: DEBUG
+    org.flywaydb: DEBUG
