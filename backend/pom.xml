@@ -28,18 +28,9 @@
 	</scm>
 	<properties>
 		<java.version>25</java.version>
+		<!-- CVE-2026-110879: remove once Spring Boot manages >= 3.2.4 -->
+		<jackson-bom.version>3.2.4</jackson-bom.version>
 	</properties>
-	<dependencyManagement>
-		<dependencies>
-			<dependency>
-				<groupId>tools.jackson</groupId>
-				<artifactId>jackson-bom</artifactId>
-				<version>3.2.4</version>
-				<type>pom</type>
-				<scope>import</scope>
-			</dependency>
-		</dependencies>
-	</dependencyManagement>
 	<dependencies>
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
