@@ -27,7 +27,12 @@ class FinaroApplicationTests {
   void contextLoads() {}
 
   @Test
-  void healthEndpointReturnsOk() {
-    client.get().uri("/actuator/health").exchange().expectStatus().isOk();
+  void healthEndpointIsUp() {
+    client.get().uri("/actuator/health").exchange().expectBody().jsonPath("status").isEqualTo("UP");
+  }
+
+  @Test
+  void swaggerUiIsReachable() {
+    client.get().uri("/swagger-ui/index.html").exchange().expectStatus().isOk();
   }
 }

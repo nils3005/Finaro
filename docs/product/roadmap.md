@@ -14,7 +14,7 @@ Status: ✅ done · 🔄 in progress · ⬜ planned
 | #   | Milestone                                                             | Phase | Status |
 | --- | --------------------------------------------------------------------- | ----- | ------ |
 | 1   | Repository foundation                                                 | MVP   | ✅      |
-| 2   | Backend skeleton                                                      | MVP   | 🔄     |
+| 2   | Backend skeleton                                                      | MVP   | ✅      |
 | 3   | Docker & local dev environment                                        | MVP   | ✅      |
 | 4   | Frontend skeleton, theme & i18n                                       | MVP   | 🔄     |
 | 5   | CI pipeline                                                           | MVP   | ⬜      |
@@ -46,7 +46,7 @@ SORT id ASC
 
 - [US-001 — Repository foundation](stories/us-001-repository-foundation.md)
 
-### 2 — Backend skeleton 🔄
+### 2 — Backend skeleton ✅
 
 - [US-002 — Backend skeleton](stories/us-002-backend-skeleton.md)
 

@@ -1,10 +1,9 @@
 ---
 id: US-002
 epic: EP-01
-status: in-progress
+status: done
 priority: MVP
 milestone: 2
-last-reviewed: 2026-11-13
 ---
 
 # US-002 — Backend skeleton
@@ -15,10 +14,10 @@ Epic: [EP-01 — Platform foundation](../epics/ep-01-platform-foundation.md)
 
 ## Acceptance criteria
 
-- [ ] The app starts with the `dev` profile and connects to PostgreSQL; DB credentials come from env vars
-- [ ] `/actuator/health` returns 200 including the DB check
-- [ ] Swagger UI is available at `/swagger-ui.html`
-- [ ] Smoke test (context loads, health 200) runs green with Testcontainers
+- [x] The app starts with the `dev` profile and connects to PostgreSQL; DB credentials come from env vars
+- [x] `/actuator/health` returns 200 including the DB check
+- [x] Swagger UI is available at `/swagger-ui.html`
+- [x] Smoke test (context loads, health 200) runs green with Testcontainers
 
 ## Tasks
 
@@ -27,7 +26,7 @@ Epic: [EP-01 — Platform foundation](../epics/ep-01-platform-foundation.md)
 - [x] Flyway migration `V1__init_schema.sql` (placeholder)
 - [x] `/actuator/health` confirms startup and DB connection
 - [x] OpenAPI / Swagger UI
-- [ ] Verify the smoke test is green
+- [x] Verify the smoke test is green
 
 ## Technical notes
 
