@@ -1,6 +1,6 @@
 ---
 status: accepted
-last-reviewed: 2026-11-13
+last-reviewed: 2026-11-14
 ---
 
 # Architecture Overview
@@ -11,9 +11,11 @@ How Finaro is built. Individual decisions and their rationale are recorded as [A
 
 | Layer | Technology |
 |-------|------------|
-| Backend | Spring Boot 3.5, Java 21, Spring Security, Spring Data JPA, Flyway |
-| Database | PostgreSQL 16 |
-| Frontend | Angular 19 (standalone components, strict TypeScript), ECharts, ngx-translate |
+| Backend | Spring Boot 4.1, Java 25, Spring Security, Spring Data JPA, Flyway |
+| Database | PostgreSQL 18 |
+| Frontend | Angular 22 (standalone components, zoneless change detection with signals, strict TypeScript), ECharts, ngx-translate — [ADR 002](adr/002-zoneless-angular-and-vitest.md) |
+| Testing | JUnit 6, Testcontainers, RestTestClient (backend); Vitest (frontend) — [ADR 002](adr/002-zoneless-angular-and-vitest.md) |
+| Toolchain | Maven Wrapper; Node.js 24 LTS for frontend build and dev server (pinned in `frontend/.nvmrc`) |
 | AI | Spring AI — provider-agnostic |
 | API docs | OpenAPI 3 / Springdoc |
 | Local runtime | Docker, Docker Compose |

@@ -6,16 +6,7 @@ Finaro helps you understand where your money goes. Import transactions, set budg
 
 ## Tech Stack
 
-| Layer          | Technology                                       |
-|----------------|--------------------------------------------------|
-| Backend        | Spring Boot 3.5, Java 21, Spring Security, Flyway |
-| Database       | PostgreSQL 16                                    |
-| Frontend       | Angular 19, standalone components, ngx-translate  |
-| AI             | Spring AI (provider-agnostic)                    |
-| API docs       | OpenAPI 3 / Springdoc                            |
-| Infrastructure | Docker, Docker Compose                           |
-| CI/CD          | GitHub Actions                                   |
-| Hosting        | Render (first), AWS (later)                      |
+Spring Boot + PostgreSQL + Angular, as a modular monolith in Docker. Versions and details: [architecture overview](docs/architecture/overview.md#tech-stack).
 
 ---
 
@@ -55,8 +46,8 @@ Finaro/
 ### Prerequisites
 
 - Docker and Docker Compose
-- Java 21 (to run backend outside Docker)
-- Node.js 22+ (to run frontend outside Docker)
+- Java 25 (to run backend outside Docker)
+- Node.js 24 LTS (to run frontend outside Docker; version pinned in `frontend/.nvmrc`)
 
 ### 1. Configure environment
 

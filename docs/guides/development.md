@@ -1,6 +1,6 @@
 ---
 status: accepted
-last-reviewed: 2026-11-13
+last-reviewed: 2026-11-14
 ---
 
 # Development Guide
@@ -43,6 +43,7 @@ Implements NFR-SEC-*.
 ## Frontend code style
 
 - [Angular style guide](https://angular.dev/style-guide); standalone components; `strict: true` TypeScript.
+- The app is zoneless ([ADR 002](../architecture/adr/002-zoneless-angular-and-vitest.md)): component state lives in signals, components use `ChangeDetectionStrategy.OnPush`.
 - No `console.log` in committed code.
 - RxJS: prefer the `async` pipe; no manual subscriptions without `takeUntilDestroyed` / equivalent.
 - **Styling:** use design tokens (CSS custom properties) only — no hardcoded colors, so both themes work ([US-017](../product/stories/us-017-switch-between-light-and-dark-theme.md)). Every new component must look correct in light **and** dark theme.
@@ -60,7 +61,8 @@ Implements [US-016](../product/stories/us-016-switch-the-ui-language.md), [US-01
 ## Testing
 
 - Service classes have unit tests; controllers are tested via MockMvc or integration tests.
-- Integration tests use Testcontainers (PostgreSQL).
+- Integration tests use Testcontainers (PostgreSQL, same major version as production).
+- Frontend unit tests use Vitest ([ADR 002](../architecture/adr/002-zoneless-angular-and-vitest.md)).
 - Business rules always have tests.
 
 ## Documentation
