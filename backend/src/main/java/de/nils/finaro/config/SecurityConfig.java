@@ -21,7 +21,6 @@ public class SecurityConfig {
         .authorizeHttpRequests(auth -> auth
             .requestMatchers("/actuator/health", "/actuator/info").permitAll()
             .requestMatchers("/v3/api-docs/**", "/swagger-ui/**", "/swagger-ui.html").permitAll()
-            // Phase 5 replaces this with .authenticated() once JWT is wired up
             .anyRequest().permitAll()
         );
     return http.build();
