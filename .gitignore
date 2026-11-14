@@ -1,10 +1,20 @@
 # ── Environment & secrets ──────────────────────────────────────────────────────
+# Covers .env.local, .env.prod, .env.*.local etc.
 .env
 .env.*
 !.env.example
-# Local overrides (never commit — may contain real credentials)
-.env.local
-.env.*.local
+
+# Key material / keystores
+*.pem
+*.key
+*.p12
+*.pfx
+*.jks
+*.keystore
+
+# Local docker compose overrides
+docker-compose.override.yml
+compose.override.yml
 
 # ── Java / Maven ───────────────────────────────────────────────────────────────
 target/
@@ -14,8 +24,6 @@ target/
 *.ear
 !**/src/main/**/target/
 !**/src/test/**/target/
-!**/src/main/**/build/
-!**/src/test/**/build/
 
 # Maven wrapper jar (downloaded on demand)
 .mvn/wrapper/maven-wrapper.jar
@@ -23,8 +31,11 @@ target/
 # ── Node / Angular ─────────────────────────────────────────────────────────────
 node_modules/
 dist/
+out-tsc/
 .angular/
 .npm/
+.eslintcache
+*.tsbuildinfo
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
@@ -40,10 +51,7 @@ yarn-error.log*
 !**/.vscode/tasks.json
 !**/.vscode/launch.json
 !**/.vscode/settings.json
-*.suo
-*.ntvs*
-*.njsproj
-*.sln
+.history/
 *.sw?
 
 # Spring Tool Suite / Eclipse
@@ -55,12 +63,19 @@ yarn-error.log*
 .springBeans
 .sts4-cache
 
-# NetBeans
+# NetBeans / generic build output
 /nbproject/private/
 /nbbuild/
 /nbdist/
 /.nb-gradle/
 build/
+!**/src/main/**/build/
+!**/src/test/**/build/
+
+# ── AI assistant local files ───────────────────────────────────────────────────
+# Shared: CLAUDE.md, .claude/settings.json — personal: the files below
+.claude/settings.local.json
+CLAUDE.local.md
 
 # ── OS ─────────────────────────────────────────────────────────────────────────
 .DS_Store
@@ -69,16 +84,20 @@ Thumbs.db
 # ── Test output ────────────────────────────────────────────────────────────────
 coverage/
 
-# ── JVM crash dumps ────────────────────────────────────────────────────────────
+# ── JVM crash & heap dumps ─────────────────────────────────────────────────────
 hs_err_pid*.log
 replay_pid*.log
+*.hprof
 
 # ── Terraform (infra/) ─────────────────────────────────────────────────────────
 .terraform/
 *.tfstate
 *.tfstate.*
+*.tfplan
 terraform.tfvars
 *.auto.tfvars
+override.tf
+*_override.tf
 # .terraform.lock.hcl is intentionally NOT ignored — pin provider versions
 
 # ── Merge & patch artifacts ────────────────────────────────────────────────────
@@ -88,3 +107,6 @@ terraform.tfvars
 # ── Misc ───────────────────────────────────────────────────────────────────────
 HELP.md
 *.log
+
+# ── Obsidian (docs vault) ──────────────────────────────────────────────────────
+.obsidian/
