@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, ChangeDetectionStrategy } from '@angular/core';
 
 @Component({
   selector: 'app-transactions',
@@ -13,6 +13,7 @@ import { Component } from '@angular/core';
       <p>Transaction list coming in Phase 6.</p>
     </div>
   `,
+  changeDetection: ChangeDetectionStrategy.Eager,
   styles: [`
     .placeholder-card {
       display: flex;

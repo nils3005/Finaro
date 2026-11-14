@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, ChangeDetectionStrategy } from '@angular/core';
 
 @Component({
   selector: 'app-reports',
@@ -13,6 +13,7 @@ import { Component } from '@angular/core';
       <p>Reports coming in Phase 8.</p>
     </div>
   `,
+  changeDetection: ChangeDetectionStrategy.Eager,
   styles: [`
     .placeholder-card {
       display: flex;

@@ -1,4 +1,4 @@
-import { AfterViewInit, Component, ElementRef, ViewChild } from '@angular/core';
+import { AfterViewInit, Component, ElementRef, ViewChild, ChangeDetectionStrategy } from '@angular/core';
 import * as echarts from 'echarts';
 
 interface MetricCard {
@@ -12,6 +12,7 @@ interface MetricCard {
   selector: 'app-dashboard',
   standalone: true,
   templateUrl: './dashboard.component.html',
+  changeDetection: ChangeDetectionStrategy.Eager,
   styleUrl: './dashboard.component.scss',
 })
 export class DashboardComponent implements AfterViewInit {
